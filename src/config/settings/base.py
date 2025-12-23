@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt",
     "corsheaders",
     "drf_spectacular",
+    'django_filters',
     
     "apps.users.apps.UsersConfig",
     "apps.products.apps.ProductsConfig",
@@ -151,6 +152,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework.authentication.SessionAuthentication",
         "rest_framework_simplejwt.authentication.JWTAuthentication",
